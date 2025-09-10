@@ -1,0 +1,4 @@
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.AssemblyInfoInputs.cache
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.AssemblyInfo.cs
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.csproj.CoreCompileInputs.cache
