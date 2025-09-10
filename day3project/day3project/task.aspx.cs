@@ -19,7 +19,7 @@ namespace day3project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string a;
+            
             if (RadioButton1.Checked == true)
             {
 
