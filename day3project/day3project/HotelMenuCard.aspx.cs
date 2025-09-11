@@ -62,7 +62,7 @@ namespace day3project
                 }
 
                 //Response.Write("Your bill is " + sum);
-                Label1.Text = "Your Bill is" + sum;
+                Label1.Text = "Your Bill is " + sum;
             }
         }
     }
