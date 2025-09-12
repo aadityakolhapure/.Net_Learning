@@ -128,7 +128,7 @@ namespace day4
             if (Session["visited"] == null) Session["visited"] = 0;
             int Score = (int)Session["Score"];
             int visited = (int)Session["visited"];
-            bool isCorrect = false;
+            //bool isCorrect = false;
 
 
             if (DropDownList1.SelectedItem.Text == "Question1")
