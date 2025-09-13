@@ -2,3 +2,14 @@ C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.Gene
 C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.AssemblyInfoInputs.cache
 C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.AssemblyInfo.cs
 C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.sourcelink.json
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\bin\Debug\net8.0\LearingC#.exe
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\bin\Debug\net8.0\LearingC#.deps.json
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\bin\Debug\net8.0\LearingC#.runtimeconfig.json
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\bin\Debug\net8.0\LearingC#.dll
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\bin\Debug\net8.0\LearingC#.pdb
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.dll
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\refint\LearingC#.dll
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.pdb
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\LearingC#.genruntimeconfig.cache
+C:\Users\LENOVO\source\repos\LearingC#\LearingC#\obj\Debug\net8.0\ref\LearingC#.dll
