@@ -8,12 +8,10 @@
 <head runat="server">
     <title></title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Flowbite CSS CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.4.1/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
 
-    <!-- used flow bite -->
     <div class="flex flex-col justify-center items-center h-screen w-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
 
         <form id="form1" runat="server">
