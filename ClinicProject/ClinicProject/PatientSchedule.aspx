@@ -12,7 +12,7 @@
         string a = Request.Params["name"];
         string b = Request.Params["phone"];
         string c = Request.Params["email"];
-        string d = Request.Params["doctor"];
+        int d = int.Parse(Request.Params["doctor"]);
         string e = Request.Params["pdate"];
         string f = Request.Params["ptime"];
         string g = Request.Params["note"];
@@ -22,7 +22,7 @@
         SqlConnection con = new SqlConnection(path);
         con.Open();
 
-        SqlCommand cmd = new SqlCommand("insert into patient values('" + a + "','"+b+"','"+c+"','"+d+"','"+e+"','"+f+"','"+g+"')",con);
+        SqlCommand cmd = new SqlCommand("insert into patients values('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "','" + g + "')", con);
 
         cmd.ExecuteNonQuery();
 

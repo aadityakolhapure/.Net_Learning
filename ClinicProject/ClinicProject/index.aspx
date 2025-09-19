@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="ClinicProject.index" %>
 
+<%@ Import Namespace="System.Data.SqlClient" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,6 +31,7 @@
                 <a href="#doctors" class="hover:text-indigo-600">Doctors</a>
                 <a href="#contact" class="hover:text-indigo-600">Contact</a>
                 <a href="#book" class="px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700">Book Now</a>
+                <a href="DoctorRegister.aspx" class="px-4 py-2 bg-indigo-900 text-white rounded-md shadow hover:bg-indigo-700">Doctor Register/Login</a>
             </nav>
             <button class="md:hidden p-2 rounded-md focus:outline-none" aria-label="Open menu">☰</button>
         </div>
@@ -98,11 +100,24 @@
                         <div>
                             <label class="text-sm font-medium">Select doctor</label>
                             <select id="doctor" name="doctor" class="mt-1 block w-full rounded-md border-gray-200 p-2">
-                                <option value="">-- Select a doctor --</option>
-                                <option value="Aarti">Dr. Aarti Sharma — General Physician</option>
-                                <option value="Rohit">Dr. Rohit Patil — Pediatrician</option>
-                                <option value="Meera">Dr. Meera Kulkarni — Cardiologist</option>
-                                <option value="Teleconsultation">Teleconsultation</option>
+                                <option value="" selected>Select the Doctor</option>
+                                <%
+                                    string path = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog=hospital;Integrated Security=True";
+
+                                    SqlConnection con = new SqlConnection(path);
+
+                                    SqlCommand cmd = new SqlCommand("SELECT userId,username FROM Users WHERE isApproved=1 AND roleId=1", con);
+                                    con.Open();
+
+                                    SqlDataReader cr = cmd.ExecuteReader();
+
+                                    while (cr.Read())
+                                    {
+%>
+                                <option value="<%Response.Write(cr["userId"]); %>"><%Response.Write(cr["username"]); %></option>
+                                <%
+                                    }
+                                %>
                             </select>
 
                             <span class="text-xs text-red-600 hidden" id="error-doctor"></span>
@@ -138,7 +153,7 @@
                 </form>
 
 
-             
+
             </aside>
         </div>
 

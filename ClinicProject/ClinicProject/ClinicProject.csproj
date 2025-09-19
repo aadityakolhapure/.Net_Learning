@@ -67,17 +67,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DoctorRegister.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="loginUser.aspx" />
     <Content Include="Web.config" />
     <Content Include="PatientSchedule.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoctorRegister.aspx.cs">
+      <DependentUpon>DoctorRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorRegister.aspx.designer.cs">
+      <DependentUpon>DoctorRegister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginUser.aspx.cs">
+      <DependentUpon>loginUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginUser.aspx.designer.cs">
+      <DependentUpon>loginUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PatientSchedule.aspx.cs">
