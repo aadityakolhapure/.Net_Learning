@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginUser.aspx.cs" Inherits="ClinicProject.loginUser" %>
 
+<%@ Import Namespace="System.Data.SqlClient" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +19,7 @@
             <p class="text-gray-500 mt-2">Login to your account</p>
         </div>
 
-        <!-- Login Form -->
-        <form method="post" action="Login.aspx">
+        <form method="post" action="loginUser.aspx">
 
             <div class="mb-5">
                 <label for="txtEmail" class="block text-gray-700 font-medium mb-2">Email</label>
@@ -50,6 +50,60 @@
                 <a href="forgotpassword.aspx" class="text-blue-600 hover:underline">Forgot Password?</a>
                 <a href="DoctorRegister.aspx" class="text-blue-600 hover:underline">Register</a>
             </div>
+
+            <%
+
+
+                string a = Request.Params["txtEmail"];
+                string b = Request.Params["txtPassword"];
+                string path = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog=hospital;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection(path);
+
+                SqlCommand cmd = new SqlCommand("select * from Users where Email='" + a + "' and Password='" + b + "'", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                if (dr.Read())
+                {
+                    int userId = Convert.ToInt32(dr["userId"]);
+                    int roleId = Convert.ToInt32(dr["roleId"]);
+                    string email = dr["Email"].ToString();
+                    bool isApproved = Convert.ToBoolean(dr["isApproved"]);
+                    string name = dr["username"].ToString(); 
+                    string specilization = dr["specialization"].ToString();
+                   
+
+                    Session["userId"] = userId;
+                    Session["email"] = email;
+                    Session["roleId"] = roleId;
+                    Session["name"] = name;
+                    Session["specilization"] = specilization;
+                   
+
+                    if (roleId == 2)
+                    {
+                        Response.Redirect("AdminPanel.aspx");
+                    }
+                    else if (roleId == 1)
+                    {
+                        if (isApproved)
+                        {
+                            Response.Redirect("DoctorPanel.aspx");
+                        }
+                        else
+                        {
+                            Response.Write("<script>alert('Your account is pending approval. Please wait for admin approval.');</script>");
+                        }
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Unauthorized Access!!');</script>");
+                    }
+                    dr.Close();
+                }
+            %>
         </form>
     </div>
 

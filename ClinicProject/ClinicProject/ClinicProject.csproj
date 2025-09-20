@@ -67,14 +67,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminDoctor.aspx" />
+    <Content Include="AdminPanel.aspx" />
+    <Content Include="adminPatient.aspx" />
+    <Content Include="DoctorPanel.aspx" />
     <Content Include="DoctorRegister.aspx" />
+    <Content Include="img.png" />
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="loginUser.aspx" />
+    <Content Include="VerifyUser.aspx" />
     <Content Include="Web.config" />
     <Content Include="PatientSchedule.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminDoctor.aspx.cs">
+      <DependentUpon>adminDoctor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminDoctor.aspx.designer.cs">
+      <DependentUpon>adminDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel.aspx.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.aspx.designer.cs">
+      <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminPatient.aspx.cs">
+      <DependentUpon>adminPatient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminPatient.aspx.designer.cs">
+      <DependentUpon>adminPatient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPanel.aspx.cs">
+      <DependentUpon>DoctorPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorPanel.aspx.designer.cs">
+      <DependentUpon>DoctorPanel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DoctorRegister.aspx.cs">
       <DependentUpon>DoctorRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,6 +144,13 @@
     </Compile>
     <Compile Include="PatientSchedule.aspx.designer.cs">
       <DependentUpon>PatientSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerifyUser.aspx.cs">
+      <DependentUpon>VerifyUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifyUser.aspx.designer.cs">
+      <DependentUpon>VerifyUser.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
