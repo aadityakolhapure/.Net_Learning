@@ -52,7 +52,7 @@
                                 string description = Request.Form["description"];
                                 string imagePath = "";
 
-                                // Save uploaded image
+                                // Save uploaded image[error in it and did't understand]
                                 if (Request.Files["imageFile"] != null && Request.Files["imageFile"].ContentLength > 0)
                                 {
                                     var file = Request.Files["imageFile"];

@@ -69,6 +69,10 @@
   <ItemGroup>
     <Content Include="Admin\Cake.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\DeleteCake.aspx" />
+    <Content Include="Admin\EditCake.aspx" />
+    <Content Include="Admin\Logout.aspx" />
+    <Content Include="Admin\Order.aspx" />
     <Content Include="Customers\cakes.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Login.aspx" />
@@ -98,6 +102,34 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteCake.aspx.cs">
+      <DependentUpon>DeleteCake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteCake.aspx.designer.cs">
+      <DependentUpon>DeleteCake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditCake.aspx.cs">
+      <DependentUpon>EditCake.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCake.aspx.designer.cs">
+      <DependentUpon>EditCake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customers\cakes.aspx.cs">
       <DependentUpon>cakes.aspx</DependentUpon>

@@ -10,7 +10,13 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body class="bg-pink-50 font-sans flex">
+    <%
+        if (Session["email"] == null || Session["name"] == null || Session["role"] == null || Session["role"] == "Customer")
+        {
+            Response.Redirect("../Login.aspx?msg=Unauthorized%20Access!!&type=error");
+        }
 
+    %>
     <!-- Sidebar -->
     <div class="w-64 bg-white shadow-lg min-h-screen">
         <div class="p-6 text-center border-b">
@@ -18,11 +24,14 @@
         </div>
         <nav class="p-6 space-y-2">
             <a href="Dashboard.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Dashboard</a>
-            <a href="Cakes.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Cakes</a>
-            <a href="Orders.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Orders</a>
+            <a href="Cake.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Cakes</a>
+            <a href="Order.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Orders</a>
             <a href="Offers.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Offers</a>
             <a href="Customers.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold">Customers</a>
-            <a href="login.aspx" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold mt-10">Logout</a>
+            <form method="post" action="Logout.aspx">
+                <button type="submit" class="block py-2 px-4 rounded-lg hover:bg-pink-100 text-gray-700 font-semibold mt-10">Logout</button>
+
+            </form>
         </nav>
     </div>
 
