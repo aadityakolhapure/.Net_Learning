@@ -67,13 +67,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddOffer.aspx" />
+    <Content Include="Admin\AddOfferLogic.aspx" />
     <Content Include="Admin\Cake.aspx" />
+    <Content Include="Admin\Customers.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\DeleteCake.aspx" />
     <Content Include="Admin\EditCake.aspx" />
+    <Content Include="Admin\EditOffers.aspx" />
     <Content Include="Admin\Logout.aspx" />
+    <Content Include="Admin\Offers.aspx" />
     <Content Include="Admin\Order.aspx" />
+    <Content Include="App_Data\CakeImages\638941728852118481.jpg" />
+    <Content Include="Customers\AddCart.aspx" />
     <Content Include="Customers\cakes.aspx" />
+    <Content Include="Customers\Cart.aspx" />
+    <Content Include="Customers\Logout.aspx" />
+    <Content Include="Images\Cakes\638941728852118481.jpg" />
+    <Content Include="Images\Cakes\Chocolate-christmas-cake-960x960-c-default.jpg" />
     <Content Include="index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="loginLogic.aspx" />
@@ -82,6 +93,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddOffer.aspx.cs">
+      <DependentUpon>AddOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddOffer.aspx.designer.cs">
+      <DependentUpon>AddOffer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddOfferLogic.aspx.cs">
+      <DependentUpon>AddOfferLogic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddOfferLogic.aspx.designer.cs">
+      <DependentUpon>AddOfferLogic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,6 +120,13 @@
     </Compile>
     <Compile Include="Admin\Cake.aspx.designer.cs">
       <DependentUpon>Cake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -117,12 +149,26 @@
     <Compile Include="Admin\EditCake.aspx.designer.cs">
       <DependentUpon>EditCake.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditOffers.aspx.cs">
+      <DependentUpon>EditOffers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditOffers.aspx.designer.cs">
+      <DependentUpon>EditOffers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Offers.aspx.cs">
+      <DependentUpon>Offers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Offers.aspx.designer.cs">
+      <DependentUpon>Offers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>
@@ -131,12 +177,40 @@
     <Compile Include="Admin\Order.aspx.designer.cs">
       <DependentUpon>Order.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customers\AddCart.aspx.cs">
+      <DependentUpon>AddCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\AddCart.aspx.designer.cs">
+      <DependentUpon>AddCart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customers\cakes.aspx.cs">
       <DependentUpon>cakes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Customers\cakes.aspx.designer.cs">
       <DependentUpon>cakes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Header.Master.cs">
+      <DependentUpon>Header.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\Header.Master.designer.cs">
+      <DependentUpon>Header.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -177,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Customers\Header.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -186,7 +261,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\Cakes\" />
+    <Folder Include="App_Data\Cakes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

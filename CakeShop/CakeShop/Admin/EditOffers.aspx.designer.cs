@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CakeShop.Customers
+namespace CakeShop.Admin
 {
 
 
-    public partial class cakes
+    public partial class EditOffers
     {
     }
 }

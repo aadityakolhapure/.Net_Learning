@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="CakeShop.Customers.Header" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body class="bg-gray-50">
+    <%
+        if (Session["email"] == null || Session["name"] == null || Session["role"] == null || Session["role"] == "Admin")
+        {
+            Response.Redirect("../Login.aspx?msg=Unauthorized%20Access!!&type=error");
+        }
+
+    %>
+
+    <!-- Header -->
+    <header class="bg-pink-600 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+
+            <!-- Logo -->
+            <a href="Index.aspx" class="flex items-center space-x-2">
+                <span class="material-symbols-outlined text-3xl">cake</span>
+                <span class="text-2xl font-bold">CakeShop</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="flex items-center space-x-6">
+                    <li><a href="cakes.aspx" class="flex items-center space-x-1 hover:underline">
+                        <span class="material-symbols-outlined">home</span>
+                        <span>Home</span>
+                    </a></li>
+
+                    <li><a href="Cart.aspx" class="flex items-center space-x-1 hover:underline relative">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span>Cart</span>
+
+                    </a></li>
+
+                    <li><a href="Orders.aspx" class="flex items-center space-x-1 hover:underline">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span>My Orders</span>
+                    </a></li>
+
+                    <!-- Profile / Customer Name -->
+                    <li class="flex items-center space-x-1">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <span>
+                            <%Response.Write(Session["name"]); %>
+                        </span>
+                        <a href="Logout.aspx" class="ml-2 underline">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-6">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-10 p-4 text-center">
+        &copy; <%= DateTime.Now.Year %> CakeShop. All rights reserved.
+    </footer>
+
+</body>
+</html>
+

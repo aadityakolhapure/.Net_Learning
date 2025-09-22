@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="CakeShop.Admin.Logout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Logout.aspx.cs" Inherits="CakeShop.Customers.Logout" %>
 
 <!DOCTYPE html>
 
@@ -11,8 +11,7 @@
         Session["name"] = null;
         Session["email"] = null;
         Session["role"] = null;
-        Session["id"] = null;
         Response.Redirect("../Login.aspx?msg=Logout%20Successfully!!&type=success");
-        %>
+    %>
 </body>
 </html>

@@ -26,6 +26,7 @@
 
             if (dr.Read())
             {
+                Session["id"] = dr["UserId"];
                 Session["email"] = dr["Email"].ToString();
                 Session["name"] = dr["Name"].ToString();
                 Session["role"] = dr["Role"].ToString();

@@ -11,7 +11,7 @@ namespace CakeShop.Customers
 {
 
 
-    public partial class cakes
+    public partial class Cart
     {
     }
 }
