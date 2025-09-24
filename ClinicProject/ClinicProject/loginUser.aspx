@@ -13,8 +13,8 @@
 
     <div class="w-full max-w-md bg-white shadow-lg rounded-xl p-10 border border-gray-200">
 
-        <!-- Logo / Title -->
         <div class="text-center mb-8">
+
             <h1 class="text-3xl font-bold text-blue-600">Welcome Back</h1>
             <p class="text-gray-500 mt-2">Login to your account</p>
         </div>
