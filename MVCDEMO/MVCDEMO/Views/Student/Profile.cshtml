@@ -1,0 +1,24 @@
+﻿@{
+    Session["Title"] = "Student Profile";
+    var name = Session["Name"];  // Using ViewBag
+    var course = Session["Course"];  // Using ViewData
+    int age = Convert.ToInt32(Session["Age"]);  // Using Session
+}
+
+<h2>Welcome, @name 👋</h2>
+<p>Course: <b>@course</b></p>
+<p>Age: <b>@age</b></p>
+
+@if (age >= 18)
+{
+    <p class="text-success">✅ You are eligible for placement drives.</p>
+}
+else
+{
+    <p class="text-danger">❌ You are not eligible yet.</p>
+
+}
+<button type="button" class="btn btn-primary"
+        onclick="location.href='@Url.Action("About", "Home")'">
+    Submit
+</button>

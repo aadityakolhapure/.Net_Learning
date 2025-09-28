@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Student Profile App</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark p-2">
+        <a href="/" class="navbar-brand text-white">Student Profile</a>
+        <a href="/Student/Profile" class="text-white">Profile</a>
+        <a href="/Home/About" class="text-white">About</a>
+    </nav>
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+</body>
+</html>
