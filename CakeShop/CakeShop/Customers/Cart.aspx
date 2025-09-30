@@ -1,16 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customers/Header.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="CakeShop.Customers.Cart" %>
-
 <%@ Import Namespace="System.Data.SqlClient" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    
 
     <div class="flex flex-col lg:flex-row gap-6">
 
         <!-- Cake List -->
         <div class="flex-1">
             <h2 class="text-2xl font-bold mb-4 text-pink-600">Order Cakes Online</h2>
-            <% 
+            <%
                 string connStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=cakeshop;Integrated Security=True";
                 using (SqlConnection con = new SqlConnection(connStr))
                 {
@@ -27,7 +30,7 @@
                     <p class="text-gray-600 text-sm"><%= reader["Description"] %></p>
                     <p class="text-pink-600 font-bold mt-1">₹<%= reader["Price"] %></p>
                 </div>
-                <form method="post" action="AddToCart.aspx" class="flex flex-col items-center">
+                <form method="post" action="AddCart.aspx" class="flex flex-col items-center">
                     <input type="hidden" name="CakeID" value="<%= reader["CakeID"] %>" />
                     <input type="number" name="Quantity" value="1" min="1" max="<%= reader["Quantity"] %>" class="w-16 border rounded px-2 py-1 mb-2 text-center" />
                     <button type="submit" class="bg-pink-600 text-white px-4 py-2 rounded flex items-center hover:bg-pink-700">
@@ -35,13 +38,14 @@
                     </button>
                 </form>
             </div>
-            <% 
+            <%
                     }
                     reader.Close();
                 }
             %>
         </div>
 
+        <!-- Cart Section -->
         <div class="w-full lg:w-1/3 bg-white p-4 rounded-lg shadow">
             <h3 class="text-xl font-bold text-pink-600 mb-4">Cart</h3>
             <%
@@ -65,6 +69,7 @@
                             int qty = Convert.ToInt32(cartReader["Quantity"]);
                             decimal price = Convert.ToDecimal(cartReader["Price"]);
                             subtotal += qty * price;
+                            int cartId = Convert.ToInt32(cartReader["CartID"]);
             %>
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-2">
@@ -74,11 +79,17 @@
                         <p class="text-gray-600 text-xs">Qty: <%= qty %></p>
                     </div>
                 </div>
-                <p class="font-bold">₹<%= qty * price %></p>
+                <div class="flex flex-col items-end gap-1">
+                    <p class="font-bold">₹<%= qty * price %></p>
+                    <form method="post" action="removeCart.aspx">
+                        <input type="hidden" name="RemoveCartID" value="<%= cartId %>" />
+                        <button type="submit" class="text-red-600 text-xs hover:underline">Remove</button>
+                    </form>
+                </div>
             </div>
             <%
-                }
-                cartReader.Close();
+                        }
+                        cartReader.Close();
             %>
             <hr class="my-2">
             <div class="flex justify-between font-bold text-pink-600 mb-2">
@@ -86,15 +97,15 @@
                 <span>₹<%= subtotal %></span>
             </div>
             <%
-                if (hasItems)
-                {
+                        if (hasItems)
+                        {
             %>
             <a href="Cart.aspx" class="block w-full text-center bg-pink-600 text-white py-2 rounded hover:bg-pink-700 mb-2">View Basket</a>
             <a href="Checkout.aspx" class="block w-full text-center bg-gray-800 text-white py-2 rounded hover:bg-gray-900">Checkout</a>
             <%
-                }
-                else
-                {
+                        }
+                        else
+                        {
             %>
             <p class="text-gray-500">Your cart is empty. Please login to add items.</p>
             <%
@@ -110,5 +121,5 @@
             %>
         </div>
     </div>
-</asp:Content>
 
+</asp:Content>

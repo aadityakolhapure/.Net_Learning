@@ -42,9 +42,9 @@
             {
                 var file = Request.Files["imageFile"];
                 string fileName = System.IO.Path.GetFileName(file.FileName);
-                string savePath = Server.MapPath("~/Images/Cakes/") + fileName;
+                string savePath = Server.MapPath("../Images/Cakes/") + fileName;
                 file.SaveAs(savePath);
-                imagePath = "~/Images/Cakes/" + fileName;
+                imagePath = "../Images/Cakes/" + fileName;
             }
 
             SqlCommand cmdUpdate = new SqlCommand("UPDATE Cakes SET Name=@name, Category=@category, Price=@price, Quantity=@quantity, Image=@image, Description=@description WHERE CakeID=@id", con);

@@ -83,6 +83,7 @@
     <Content Include="Customers\cakes.aspx" />
     <Content Include="Customers\Cart.aspx" />
     <Content Include="Customers\Logout.aspx" />
+    <Content Include="Customers\removeCart.aspx" />
     <Content Include="Images\Cakes\638941728852118481.jpg" />
     <Content Include="Images\Cakes\Chocolate-christmas-cake-960x960-c-default.jpg" />
     <Content Include="index.aspx" />
@@ -211,6 +212,13 @@
     </Compile>
     <Compile Include="Customers\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\removeCart.aspx.cs">
+      <DependentUpon>removeCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\removeCart.aspx.designer.cs">
+      <DependentUpon>removeCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
