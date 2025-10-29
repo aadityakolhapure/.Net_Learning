@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Secure Area";
+}
+<h2>Welcome, Authenticated User!</h2>
+<p>@ViewBag.Message</p>
+
+<button id="sign-out-btn">Sign Out</button>
+
+<script>
+    window.addEventListener("load", async () => {
+        await Clerk.load();
+        const btn = document.getElementById("sign-out-btn");
+        btn.addEventListener("click", async () => {
+            await Clerk.signOut();
+            window.location.href = "/Auth/SignIn";
+        });
+    });
+</script>
+
+
+

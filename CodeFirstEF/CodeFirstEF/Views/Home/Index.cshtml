@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CodeFirstEF.Models.Student>
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <h1>Student Detail</h1>
+
+            <table border="1">
+                <tr>
+                    <th>StudentId</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                </tr>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@student.SId</td>
+                        <td>@student.SName</td>
+                        <td>@student.Age</td>
+                        <td>@student.Address</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </body>
+</html>

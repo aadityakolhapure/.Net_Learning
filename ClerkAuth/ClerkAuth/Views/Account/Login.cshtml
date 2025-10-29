@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Sign In";
+}
+
+<div id="sign-in" style="margin-top: 100px; display: flex; justify-content: center;"></div>
+
+<script>
+    window.addEventListener("load", async () => {
+        await Clerk.load();
+        Clerk.mountSignIn({
+            element: document.getElementById("sign-in"),
+            afterSignInUrl: "/Home/Secure"
+        });
+    });
+</script>
