@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 // Add DbContext service
 builder.Services.AddDbContext<EmployeeContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -27,6 +28,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

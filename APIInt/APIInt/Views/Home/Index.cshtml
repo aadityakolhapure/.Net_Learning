@@ -1,8 +1,32 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Employee List";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Employee List</h2>
+<table id="employeeTable">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    fetch('/api/EMP')
+        .then(response => response.json())
+        .then(data => {
+            let tbody = document.querySelector("#employeeTable tbody");
+            data.forEach(emp => {
+                let row = `<tr>
+                    <td>${emp.eid}</td>
+                    <td>${emp.ename}</td>
+                    <td>${emp.eemail}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Error:', error));
+</script>
+

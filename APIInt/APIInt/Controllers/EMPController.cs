@@ -42,10 +42,7 @@ namespace APIInt.Controllers
         [HttpPost("{id}")]
         public ActionResult<emp> Update(int id, [FromBody] emp updatedEmployee)
         {
-            if (id != updatedEmployee.eid)
-            {
-                return Ok("ID in URL and request body do not match");
-            }
+        
             var existingEmployee = _context.Employees.Find(id);
 
             if(existingEmployee == null)
@@ -58,6 +55,19 @@ namespace APIInt.Controllers
             _context.SaveChanges();
 
             return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            var employee = _context.Employees.Find(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            _context.Employees.Remove(employee);
+            _context.SaveChanges();
+            return Ok("Deleted Successfully");
         }
     }
 }

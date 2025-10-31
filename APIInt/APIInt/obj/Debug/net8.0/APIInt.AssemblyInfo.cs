@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("APIInt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92e78fdeb4d1bb8edabd78b19bfe7e978d9396e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c803ae8a1339a9c9e63fb436720c40b3fb8ad948")]
 [assembly: System.Reflection.AssemblyProductAttribute("APIInt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("APIInt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

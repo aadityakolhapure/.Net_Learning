@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using APIInt.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace APIInt.Controllers
 {
@@ -13,14 +14,20 @@ namespace APIInt.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        private readonly HttpClient _httpClient;
+
+        public HomeController(IHttpClientFactory httpClientFactory)
         {
-            return View();
+            _httpClient = httpClientFactory.CreateClient();
         }
 
-        public IActionResult Privacy()
+       
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _httpClient.GetStringAsync("https://localhost:7026/api/EMP");  // Replace with correct port
+            var employees = JsonConvert.DeserializeObject<List<emp>>(response);
+            return View(employees); // Pass to your Razor page
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
